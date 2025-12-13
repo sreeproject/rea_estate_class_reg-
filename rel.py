@@ -39,7 +39,12 @@ def load_xgb_model():
                 f.write(r.content)
     return joblib.load(XGB_MODEL_PATH)
 
-
-
 good_model = load_price_model()
-xgb_model  = load_xgb_model()
+xgb_model = None
+
+if st.checkbox("Enable XGBoost Model"):
+    xgb_model = load_xgb_model()
+
+#good_model = load_price_model()
+
+#xgb_model  = load_xgb_model()
